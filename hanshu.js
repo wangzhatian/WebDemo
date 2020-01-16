@@ -25,13 +25,24 @@ console.log(fib(10))
 //  }
 //  return sum
 // }
-//前后倒置
-function qianhou(a) {
- if (arguments.length!=1){
-  return  console.log("不合法")
- }
- var value=arguments[0];
+// //闭包
+// function outer() {
+//  var a=333;
+//  function inner() {
+//   console.log(a)
+//  }
+//  return inner
+// }
+// //数组
+// var  arr=["东","南","西","北",null];
+// var  arr1=["大","小","多","少"]
+// console.log(arr)
+// console.log(arr.splice(1,"2"))
+// console.log(arr.reverse())
+// console.log(arr.sort())
+// console.log(arr.slice(1,3))
 
-
-}
-qianhou(123,234432)
+// for (var i=0;i<arr.length;i++){
+//     console.log(arr[i],typeof arr[i])
+// }
+document.getElementById()
