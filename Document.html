@@ -5,16 +5,22 @@
     <title>Document</title>
 </head>
 <body>
-<img src="img/adb.png" alt="" id="adb">
-<!--<p id="box">-->
-<!--    测试-->
-<!--</p>-->
+<div class="box" id="idbox" style="width: 200px;height: 200px;background: skyblue">
+    我的
+</div>
+
+<!--<img src="img/adb.png" alt="" id="adb">-->
 <script>
     // var box=document.getElementById("box");
     // console.log(box);
     // box.style.background="red";
-    var adb=document.getElementById("adb");
-    adb.src="img/壁纸-程序员.jpg"
+    // var adb=document.getElementById("adb");
+    // adb.src="img/壁纸-程序员.jpg"
+    var box=document.getElementById("idbox")
+    box.style.width='200px';
+    box.style.border='10px solid red';
+    box.style.borderTop='10px solid bule';
+    // console.log(box.style)
 </script>
 </body>
 </html>

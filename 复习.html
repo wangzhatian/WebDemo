@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>复习</title>
+</head>
+<body>
+<div>1</div>
+<div>
+    <p>
+        <span>span0</span>
+        <span>span1</span>
+        <span>span2</span>
+    </p>
+    <p></p>
+    <p>
+        <span>span0</span>
+        <span>span111</span>
+        <span>span2</span>
+    </p>
+    <p></p>
+</div>
+<div>3</div>
+<div>4</div>
+<div>5</div>
+<script>
+    document.getElementsByTagName("div")[1].getElementsByTagName("p")[2]
+    .getElementsByTagName("span")[1].style.background="red"
+</script>
+</body>
+</html>

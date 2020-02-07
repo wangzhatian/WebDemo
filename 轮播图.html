@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图</title>
+    <style>
+        /**{*/
+        /*    margin: 0;*/
+        /*    padding: 0;*/
+        /*}*/
+        .box{
+            width: 672px;
+            height: 320px;
+            border: 1px solid gray;
+            margin: 100px auto;
+            position: relative;
+        }
+        ul{
+            list-style: none;
+        }
+        /*控制图片的位置*/
+        .imglist ul li{
+            width: 672px;
+            height: 320px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+        /*控制图片是否显示*/
+        .imglist ul li.current{
+            display: block;
+        }
+        /*向左向右的位置*/
+        .btn span{
+            width: 55px;
+            height: 55px;
+            background:  url("img/slide-btnL.png");
+            position: absolute;
+            top: 50%;
+            margin: -27px;
+        }
+        .btn span.leftbtn{
+            left: 10px;
+        }
+        .btn span.rightbtn{
+            right: 10px;
+            background: url("img/slide-btnR.png");
+        }
+        /*小圆点进行定位*/
+        .circle{
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+        }
+        /*控制小圆点位置*/
+        .circle ul li{
+            width: 10px;
+            height: 10px;
+            background: rgba(0,0,0,0.5);
+            border-radius:50%;
+            float: left;
+        }
+        /*控制小圆点颜色,有current的显示白色*/
+        .circle ul li.current{
+            background: white;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="imglist" id="imglist">
+        <ul>
+            <li class="current"><a href="#"><img src="img/aaa.jpg" alt=""></a></li>
+            <li><a href="#"><img src="img/bbb.jpg" alt=""></a></li>
+            <li><a href="#"><img src="img/ccc.jpg" alt=""></a></li>
+            <li><a href="#"><img src="img/eee.jpg" alt=""></a></li>
+        </ul>
+    </div>
+    <div class="btn" >
+        <span class="leftbtn" id="left"></span>
+        <span class="rightbtn" id="right"></span>
+
+    </div>
+    <div class="circle" id="circle">
+        <ul>
+            <li class="current"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</div>
+<script>
+    //获取元素
+    var imglis=document.getElementById("imglist").getElementsByTagName("li")
+    var leftbtn=document.getElementById("left")
+    var rightbtn=document.getElementById("right")
+    var circlelis=document.getElementById('circle').getElementsByTagName("li")
+    //信号量
+    var idx=0;
+    //左右按钮点击事件
+    rightbtn.onclick=function () {
+        idx++;
+        changePic()
+    }
+    leftbtn.onclick=function () {
+        idx--;
+        changePic()
+    }
+    //小圆点批量监听
+    for (var i=0;i<circlelis.length;i++){
+        circlelis[i].idxx=i
+        circlelis[i].onmouseover=function () {
+            //鼠标进入小圆点时候要更改idx值
+            idx=this.idxx
+            changePic()
+        }
+    }
+    function changePic() {
+        if (idx<0) idx=imglis.length-1;
+        if (idx>imglis.length-1) idx=0;
+        //根据信号量做排他,实现图片切换
+        for (var i=0;i<imglis.length;i++){
+            imglis[i].className="";
+        }
+        imglis[idx].className="current"
+        //根据信号量做排他,实现小圆点切换
+        for (var i=0;i<circlelis.length;i++){
+            circlelis[i].className="";
+        }
+        circlelis[idx].className="current"
+    }
+</script>
+</body>
+</html>

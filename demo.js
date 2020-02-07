@@ -49,32 +49,53 @@ for (var i=1;i<=9;i++){
 //     console.log(a+b);
 // }
 // sum(3,4);
-function yueshu(m) {
-    var count=0;
-    for (var i=1;i<=m;i++){
-        if(m%i==0){
-            count++;
-        }
-    }
-    return count
-}
+// function yueshu(m) {
+//     var count=0;
+//     for (var i=1;i<=m;i++){
+//         if(m%i==0){
+//             count++;
+//         }
+//     }
+//     return count
+// }
+//
+// function isZhishu(n) {
+//     if (yueshu(n)==2){
+//         return true
+//     }else {
+//         return false
+//     }
+// }
+// function sumZhiShu(i,j) {
+//     sum = 0
+//     for (var i = i; i <= j; i++) {
+//         if (isZhishu(i)) {
+//             sum += i
+//         } else {
+//             continue
+//         }
+//     }
+//     return sum
+// }
+// //重复char字符串n次
+// function repeat(char,n) {
+//     start="";
+//     for (var i=1;i<=n;i++){
+//         start+=char
+//     }
+//     return start
+// }
+// console.log(repeat("*",2))
+//杨辉三角
+function xingxing(n) {
+    flag=""
+    char="*"
+    for (var i=1;i<=n;i++){
+        for (var j=1;j<=i;j++){
+            console.log(flag,char)
 
-function isZhishu(n) {
-    if (yueshu(n)==2){
-        return true
-    }else {
-        return false
-    }
-}
-function sumZhiShu(i,j) {
-    sum = 0
-    for (var i = i; i <= j; i++) {
-        if (isZhishu(i)) {
-            sum += i
-        } else {
-            continue
         }
+        console.log("\n")
     }
-    return sum
 }
-console.log(sumZhiShu(1,100))
+xingxing(3)
